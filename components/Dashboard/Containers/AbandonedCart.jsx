@@ -13,15 +13,18 @@ const AbandonedCart = () => {
 
       <div className="flex items-start justify-between lightText mt-[25px]">
         <p className="w-[50%] text-red-600 font-light">Abandoned Cart</p>
-        <p className="w-[50%] text-white font-light">Customers</p>
+        <p className="w-[50%] normalText font-light">Customers</p>
       </div>
       {/* Layer3 */}
       <div className="flex items-start justify-between">
-        <p className="w-[50%] font-semibold">
+        <p className="w-[50%] darkText font-semibold">
           20%{" "}
-          <span className="text-xs font-light text-green-600"> +00.00%</span>{" "}
+          <span className="text-xs darkText font-light text-green-600">
+            {" "}
+            +00.00%
+          </span>{" "}
         </p>
-        <p className="w-[50%] font-semibold">30</p>
+        <p className="w-[50%] darkText font-semibold">30</p>
       </div>
     </div>
   )
