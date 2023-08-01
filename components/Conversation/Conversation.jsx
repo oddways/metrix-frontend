@@ -11,11 +11,20 @@ const Conversation = () => {
 
   return (
     <div className="w-full min-h-screen bg-gray-100 flex gap-4">
-      {/* Left */}
-      {toggleMessage === "list" && <MessageList viewMessage={viewMessage} />}
+      {/* Desktop */}
+      <div className="w-full hidden lg:flex gap-4">
+        <MessageList viewMessage={viewMessage} />
+        <Message closeMessage={closeMessage} />
+      </div>
 
-      {/* Right */}
-      {toggleMessage === "message" && <Message closeMessage={closeMessage} />}
+      {/* Mobile */}
+      <div className="w-full flex lg:hidden">
+        {/* Left */}
+        {toggleMessage === "list" && <MessageList viewMessage={viewMessage} />}
+
+        {/* Right */}
+        {toggleMessage === "message" && <Message closeMessage={closeMessage} />}
+      </div>
     </div>
   )
 }

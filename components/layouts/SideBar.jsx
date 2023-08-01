@@ -2,13 +2,16 @@
 import { useContext } from "react"
 import GlobalContext from "@/context/GlobalContext"
 import { GiChameleonGlyph, GiHamburgerMenu } from "react-icons/gi"
-
+import Link from "next/link"
 import { BsBag, BsPeople, BsChatDots } from "react-icons/bs"
-import { MdOutlineInventory2 } from "react-icons/md"
+import { MdOutlineInventory2, MdDashboard } from "react-icons/md"
 import { FiSettings } from "react-icons/fi"
 import { BiLogOut } from "react-icons/bi"
+import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 const SideBar = () => {
+  const pathWays = usePathname()
   const { toggleNav, isDesktop, handleToggleNav } = useContext(GlobalContext)
   return (
     <div
@@ -19,22 +22,32 @@ const SideBar = () => {
       } shadow-sm shadow-black md:flex z-50 bg-white flex-col items-start py-5 px-3    w-[100px] md:w-[100px] min-h-screen duration-300 ease-in-out`}
     >
       {/* Header */}
-      <div className="flex items-center gap-3">
-        <GiChameleonGlyph size={30} />
+      <Link href={"/"} className="flex items-center gap-3">
+        {/* <MdDashboard size={30} /> */}
+        <Image src={"/images/Logo.jpg"} alt="logo" width={50} height={50} />
         {toggleNav && <p className="darkText text-2xl font-semibold">Metrix</p>}
-      </div>
+      </Link>
 
       {/* Route List */}
       <div className="mt-[70px] flex flex-col items-center gap-2">
-        <div
+        {/* Dashboard */}
+        <Link
+          href={"/"}
           className={`${
             toggleNav ? "w-[200px]" : ""
-          } flex gap-3 px-4 py-2 items-center border border-blue-400  rounded-xl blueContainer`}
+          } flex gap-3 px-4 py-2 items-center border border-blue-400  rounded-xl ${
+            pathWays === "/"
+              ? "blueContainer"
+              : "border border-transparent group groupHover"
+          }`}
         >
-          <GiChameleonGlyph size={toggleNav ? 20 : 15} />
+          <MdDashboard
+            color={pathWays === "/" ? "white" : "black"}
+            size={toggleNav ? 20 : 15}
+          />
           {toggleNav && <p>Dashboard</p>}
-        </div>
-
+        </Link>
+        {/* Orders */}
         <div
           className={`${
             toggleNav ? "w-[200px]" : ""
@@ -44,6 +57,8 @@ const SideBar = () => {
 
           {toggleNav && <p className="group-hover:text-white">Order</p>}
         </div>
+
+        {/* Customers */}
         <div
           className={`${
             toggleNav ? "w-[200px]" : ""
@@ -52,6 +67,8 @@ const SideBar = () => {
           <BsPeople size={20} className="group-hover:text-[#5570F1] " />
           {toggleNav && <p className="group-hover:text-white">Customers</p>}
         </div>
+
+        {/* Inventory */}
         <div
           className={`${
             toggleNav ? "w-[200px]" : ""
@@ -63,14 +80,25 @@ const SideBar = () => {
           />
           {toggleNav && <p className="group-hover:text-white">Inventory</p>}
         </div>
-        <div
+
+        {/* Conversation */}
+        <Link
+          href={"/conversation"}
           className={`${
             toggleNav ? "w-[200px]" : ""
-          }  flex gap-3 px-4 py-2 items-center border border-transparent rounded-xl darkText text-sm group groupHover`}
+          }  flex gap-3 px-4 py-2 items-center border border-transparent rounded-xl darkText text-sm ${
+            pathWays === "/conversation" ? "blueContainer" : "group groupHover"
+          }`}
         >
-          <BsChatDots size={20} className="group-hover:text-[#5570F1]" />
+          <BsChatDots
+            color={pathWays === "/conversation" ? "white" : "black"}
+            size={20}
+            className="group-hover:text-[#5570F1]"
+          />
           {toggleNav && <p className="group-hover:text-white">Conversations</p>}
-        </div>
+        </Link>
+
+        {/* Settings */}
         <div
           className={`${
             toggleNav ? "w-[200px]" : ""
@@ -123,7 +151,7 @@ const SideBar = () => {
         </div>
       </div>
       {/* Menu toggle */}
-      {toggleNav && !isDesktop && (
+      {toggleNav && (
         <div className="absolute right-3 top-3">
           <GiHamburgerMenu
             color="#5570F1"

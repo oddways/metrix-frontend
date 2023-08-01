@@ -10,15 +10,15 @@ import Image from "next/image"
 const Message = ({ closeMessage }) => {
   return (
     <>
-      <div className="w-full  h-[80vh] bg-white rounded-2xl shadow-sm shadow-gray-700 py-3 px-2 lg:px-4 ">
+      <div className="w-full  h-fit bg-white rounded-2xl shadow-sm shadow-gray-700 py-3 px-2 lg:px-4 ">
         {/* Top */}
         <section className="w-full pb-3 border-b border-gray-300 flex items-center justify-between">
           {/* Left */}
           <div className="flex items-center gap-2">
             <BsFillArrowLeftCircleFill
-              size={20}
+              size={30}
               color="#5570F1"
-              className="hover:opacity-75 cursor-pointer"
+              className="lg:hidden hover:opacity-75 cursor-pointer"
               onClick={closeMessage}
             />
             <div className=" w-[20%] h-full relative z-10">
@@ -34,7 +34,7 @@ const Message = ({ closeMessage }) => {
               <p className="darkText">Jane Doe</p>
               <div className="flex items-center gap-2 normalText text-xs">
                 <p className="lightText">Online</p>
-                <p>12:55 am</p>
+                <p className="whitespace-nowrap">12:55 am</p>
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ const Message = ({ closeMessage }) => {
           {/* Right */}
           <div className="flex flex-col items-end gap-2 text-xs">
             <div className="flex items-center gap-2">
-              <p className="p-1 bg-yellow-200 rounded-md text-[10px] lg:text-xs whitespace-nowrap normalText">
+              <p className="p-1 bg-yellow-200 rounded-md text-[10px] lg:text-xs whitespace-nowrap normalText hidden md:flex">
                 New Customer
               </p>
               <p className=" text-[#5570F1] cursor-pointer hover:underline hover:opacity-70 whitespace-nowrap">

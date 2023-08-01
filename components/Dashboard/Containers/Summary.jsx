@@ -1,4 +1,4 @@
-import React from "react"
+import Image from "next/image"
 
 const Summary = () => {
   return (
@@ -17,7 +17,16 @@ const Summary = () => {
       </div>
 
       {/* Bottom */}
-      <div className="mt-2"></div>
+      <div className="mt-2 w-full h-full flex items-center justify-center">
+        <div className="w-full">
+          <Image
+            src={"/images/summary.jpg"}
+            alt="marketing"
+            width={500}
+            height={100}
+          />
+        </div>
+      </div>
     </div>
   )
 }

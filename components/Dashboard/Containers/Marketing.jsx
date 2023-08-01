@@ -1,4 +1,5 @@
 import { GoDotFill } from "react-icons/go"
+import Image from "next/image"
 
 const Marketing = () => {
   return (
@@ -30,7 +31,16 @@ const Marketing = () => {
       </section>
 
       {/* Bottom */}
-      <section></section>
+      <section className="mt-2 w-full flex items-center justify-center">
+        <div className="ml-[30px]">
+          <Image
+            src={"/images/marketing.jpg"}
+            alt="marketing"
+            width={200}
+            height={200}
+          />
+        </div>
+      </section>
     </div>
   )
 }

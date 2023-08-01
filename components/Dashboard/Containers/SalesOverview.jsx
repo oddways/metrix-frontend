@@ -1,6 +1,10 @@
+"use client"
+import { useSelector } from "react-redux"
 import { BiLogOut } from "react-icons/bi"
 
 const SalesOverview = () => {
+  const { Sales } = useSelector((store) => store.dashboardStore)
+  console.log(Sales)
   return (
     <div className="w-full flex flex-col gap-2  bg-white shadow-black shadow-sm rounded-2xl py-4 px-3">
       {/* layer1 */}
@@ -20,10 +24,15 @@ const SalesOverview = () => {
       </div>
       {/* Layer3 */}
       <div className="flex items-start justify-between">
-        <p className="w-[50%] font-semibold">N4,000,000.00</p>
         <p className="w-[50%] font-semibold">
-          450{" "}
-          <span className="text-xs font-light text-green-600"> +20.00%</span>
+          N{Sales?.total.toLocaleString("en-US")}
+        </p>
+        <p className="w-[50%] font-semibold">
+          {Sales?.volume}{" "}
+          <span className="text-xs font-light text-green-600">
+            {" "}
+            {Sales?.volumePercentage}
+          </span>
         </p>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { AiFillHome } from "react-icons/ai"
 import { BsBellFill } from "react-icons/bs"
 import { GiHamburgerMenu } from "react-icons/gi"
 import Image from "next/image"
+import Link from "next/link"
 
 const Navbar = () => {
   const { handleToggleNav, toggleNav, isDesktop } = useContext(GlobalContext)
@@ -21,7 +22,12 @@ const Navbar = () => {
               onClick={handleToggleNav}
             />
           )}
-          <h1 className="darkText font-semibold">Dashboard</h1>
+          <Link
+            href={"/"}
+            className="hover:text-blue-500 darkText font-semibold"
+          >
+            Dashboard
+          </Link>
         </div>
 
         {/* Right side */}

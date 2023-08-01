@@ -6,7 +6,7 @@ const MessageList = ({ viewMessage }) => {
   const [searchVal, setSearchVal] = useState("")
   return (
     <>
-      <div className="w-full  lg:w-[400px] h-[80vh] bg-white rounded-2xl shadow-sm shadow-gray-700 py-3 px-2 md:px-4">
+      <div className="w-full  lg:w-[400px] h-fit bg-white rounded-2xl shadow-sm shadow-gray-700 py-3 px-2 md:px-4">
         {/* header */}
         <section className="flex items-center justify-between">
           <h1 className="darkText font-semibold">Contact</h1>
