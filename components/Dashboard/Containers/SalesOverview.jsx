@@ -1,6 +1,6 @@
 "use client"
 import { useSelector } from "react-redux"
-import { BiLogOut } from "react-icons/bi"
+import { BsFileEarmarkBarGraph } from "react-icons/bs"
 
 const SalesOverview = () => {
   const { Sales } = useSelector((store) => store.dashboardStore)
@@ -9,7 +9,7 @@ const SalesOverview = () => {
     <div className="w-full flex flex-col gap-2  bg-white shadow-black shadow-sm rounded-2xl py-4 px-3">
       {/* layer1 */}
       <div className="flex items-center justify-between">
-        <BiLogOut color="#5570F1" size={25} />
+        <BsFileEarmarkBarGraph color="#5570F1" size={25} />
         <select>
           <option value="This week" className="lightText text-xs">
             This week
