@@ -17,7 +17,7 @@ const SideBar = () => {
     <div
       className={`${
         toggleNav
-          ? "absolute md:relative top-0 left-0 w-[300px] md:w-[400px] lg:w-[300px] "
+          ? "fixed md:relative top-0 left-0 w-[300px] md:w-[400px] lg:w-[300px] "
           : "relative w-[80px] "
       } shadow-sm shadow-black md:flex z-50 bg-white flex-col items-start py-5 px-3    w-[100px] md:w-[100px] min-h-screen duration-300 ease-in-out`}
     >
