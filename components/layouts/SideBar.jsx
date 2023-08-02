@@ -6,7 +6,7 @@ import Link from "next/link"
 import { BsBag, BsPeople, BsChatDots } from "react-icons/bs"
 import { MdOutlineInventory2, MdDashboard } from "react-icons/md"
 import { FiSettings } from "react-icons/fi"
-import { BiLogOut } from "react-icons/bi"
+import { BiLogOut, BiLogoNodejs } from "react-icons/bi"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 
@@ -23,8 +23,8 @@ const SideBar = () => {
     >
       {/* Header */}
       <Link href={"/"} className="flex items-center gap-3">
-        {/* <MdDashboard size={30} /> */}
-        <Image src={"/images/Logo.jpg"} alt="logo" width={30} height={20} />
+        <BiLogoNodejs size={30} color="#5570F1" />
+        {/* <Image src={"/images/Logo.jpg"} alt="logo" width={25} height={20} /> */}
         {toggleNav && <p className="darkText text-2xl font-semibold">Metrix</p>}
       </Link>
 

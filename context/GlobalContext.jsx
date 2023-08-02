@@ -4,7 +4,7 @@ import { createContext, useState } from "react"
 const GlobalContext = createContext()
 
 export const GlobalProvider = ({ children }) => {
-  const [toggleNav, setToggleNav] = useState(true)
+  const [toggleNav, setToggleNav] = useState(false)
   const [isDesktop, setIsDesktop] = useState(false)
   const [toggleMessage, setToggleMessage] = useState("list")
 
