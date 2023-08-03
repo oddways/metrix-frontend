@@ -10,7 +10,7 @@ import Link from "next/link"
 const Navbar = () => {
   const { handleToggleNav, toggleNav, isDesktop } = useContext(GlobalContext)
   return (
-    <nav className="w-full z-[2] text-sm md:text-base  h-[90px] flex flex-col gap-3  bg-white p-2 md:p-4">
+    <nav className="w-full z-[2] text-sm md:text-base  h-[90px] flex flex-col gap-3  bg-white p-2 md:p-4 duration-300 ease-in-out">
       <div className="w-full flex items-center justify-between">
         {/* Left side */}
         <div className="flex items-center gap-2">
